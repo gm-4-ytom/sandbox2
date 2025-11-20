@@ -39,3 +39,8 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+
+# Build output
+!/build
+/build/*
+!/build/.gitkeep
