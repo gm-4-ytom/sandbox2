@@ -28,6 +28,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: List files for debugging
+        run: |
+          pwd
+          ls -la
+          ls -la ./build
+
       - name: Build Docker image
         run: |
           docker build -f ./src/main/docker/Dockerfile.native-micro -t ghcr.io/${{ github.repository }}:latest .
