@@ -35,7 +35,7 @@ jobs:
           ls -la ./build
 
       - name: Build native runner binary
-        run: quarkus build --native -Dquarkus.native.container-build=true
+        run: ./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
 
       - name: List files for debugging 2
         run: |
