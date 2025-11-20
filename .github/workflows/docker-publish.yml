@@ -34,6 +34,13 @@ jobs:
           ls -la
           ls -la ./build
 
+      - name: Build native runner binary
+        run: quarkus build --native -Dquarkus.native.container-build=true
+
+      - name: List files for debugging 2
+        run: |
+          ls -la ./build
+
       - name: Build Docker image
         run: |
           docker build -f ./src/main/docker/Dockerfile.native-micro -t ghcr.io/${{ github.repository }}:latest .
